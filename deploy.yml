@@ -1,0 +1,14 @@
+---
+- name: Deploy Scientific Calculator with Docker
+  hosts: server
+  tasks:
+
+    - name: Pull latest Docker image
+      command: docker pull amanve7/scientific-calculator:latest
+
+    - name: Stop existing container (if running)
+      command: docker rm -f calculator-container
+      ignore_errors: yes
+
+    - name: Run new container
+      command: docker run -d --name calculator-container amanve7/scientific-calculator:latest
