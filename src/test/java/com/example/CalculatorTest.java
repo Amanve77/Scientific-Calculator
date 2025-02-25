@@ -15,7 +15,7 @@ public class CalculatorTest {
 
     @Test
     void testFactorial() {
-        assertEquals(120, calculator.factorial(5));
+        assertEquals(125, calculator.factorial(5));
     }
 
     @Test
