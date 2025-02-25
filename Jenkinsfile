@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         MAVEN_HOME = "/usr/share/maven"
-        DOCKER_IMAGE = "amanve77/scientific-calculator:latest"
+        DOCKER_IMAGE = "amanve7/scientific-calculator:latest"
     }
 
     stages {
