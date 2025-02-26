@@ -1,7 +1,6 @@
 ---
 - name: Deploy Scientific Calculator with Docker
   hosts: server
-  become: true  
   tasks:
 
     - name: Ensure Docker is installed
