@@ -1,14 +1,29 @@
 ---
 - name: Deploy Scientific Calculator with Docker
   hosts: server
+  become: true  
   tasks:
 
-    - name: Pull latest Docker image
-      command: docker pull amanve7/scientific-calculator:latest
+    - name: Ensure Docker is installed
+      apt:
+        name: docker.io
+        state: present
 
-    - name: Stop existing container (if running)
-      command: docker rm -f calculator-container
-      ignore_errors: yes
+    - name: Pull the latest Docker image
+      community.docker.docker_image:
+        name: amanve7/scientific-calculator:latest
+        source: pull
+
+    - name: Stop and remove existing container (if any)
+      community.docker.docker_container:
+        name: calculator-container
+        state: absent
 
     - name: Run new container
-      command: docker run -d --name calculator-container amanve7/scientific-calculator:latest
+      community.docker.docker_container:
+        name: calculator-container
+        image: amanve7/scientific-calculator:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "8080:8080"  
