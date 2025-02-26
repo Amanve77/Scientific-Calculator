@@ -24,5 +24,3 @@
         image: amanve7/scientific-calculator:latest
         state: started
         restart_policy: always
-        ports:
-          - "8080:8080"  
