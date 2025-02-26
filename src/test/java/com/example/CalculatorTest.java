@@ -10,7 +10,7 @@ public class CalculatorTest {
 
     @Test
     void testSquareRoot() {
-        assertEquals(5.0, calculator.squareRoot(25), 0.001);
+        assertEquals(6.0, calculator.squareRoot(36), 0.001);
     }
 
     @Test
