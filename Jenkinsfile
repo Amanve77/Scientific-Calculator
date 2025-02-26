@@ -4,7 +4,7 @@ pipeline {
     environment {
         MAVEN_HOME = "/usr/share/maven"
         DOCKER_IMAGE = "amanve7/scientific-calculator:latest"
-        JAR_FILE = "target/scientific-calculator.jar"
+        JAR_FILE = "target/scientific-calculator-1.0-SNAPSHOT.jar"
     }
 
     stages {
